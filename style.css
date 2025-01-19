@@ -17,11 +17,9 @@
 html{
     scroll-behavior: smooth;
 }
-
-/* Navbar Styles */
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: rgb(225, 231, 237);
@@ -32,7 +30,6 @@ html{
     height: var(--navbar-height);
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
 }
 
 .navbar .logo img {
@@ -56,6 +53,71 @@ html{
 .navbar .nav-items a:hover {
     color: var(--highlight-color);
 }
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--heading-color);
+    transition: background-color 0.3s ease;
+}
+
+/* Hide nav-items on smaller screens by default */
+.navbar .nav-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--navbar-height);
+    right: 0;
+    background-color: rgb(225, 231, 237);
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-items a {
+    margin: 10px 0;
+}
+
+/* Show nav-items when the hamburger is active */
+.navbar.active .nav-items {
+    display: flex;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .navbar .nav-items {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        text-align: left;
+    }
+
+    .navbar .nav-items a {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+}
+
 
 /* Adjust for Fixed Navbar */
 main {
