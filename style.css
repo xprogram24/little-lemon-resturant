@@ -223,7 +223,44 @@ main {
     height: 30px;
     background-color: #333333;
 }
+@media (max-width: 768px) {
+    .about .container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
 
+    .about .about-us {
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .about-header {
+        font-size: 1.5em; /* Adjust font size for readability */
+    }
+
+    .about-title {
+        font-size: 1em;
+    }
+
+    .about-us .btn button {
+        font-size: 0.9em;
+        padding: 10px 20px; /* Smaller button size */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header {
+        font-size: 1.2em;
+    }
+
+    .about-us .btn button {
+        font-size: 0.8em;
+        padding: 8px 15px; /* Further reduce button size */
+    }
+
+    .chef img {
+        width: 90%; /* Reduce image size */
+    }
+}
 /*info section*/
 .info {
     background-color: #333;
